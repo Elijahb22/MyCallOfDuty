@@ -1,19 +1,18 @@
 const { Schema } = require('mongoose');
 
-const postSchema = new Schema(
+const commentSchema = new Schema(
     {
-        post: {
+        comment: {
             type: String,
-            minlength: 1,
-            maxlength: 300
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now
+            maxlength: 200
         },
         username: {
             type: String,
             required: true
+        }, 
+        createdAt: {
+            type: Date,
+            default: Date.now,
         }
     },
     {
@@ -21,6 +20,6 @@ const postSchema = new Schema(
             getters: true
         }
     }
-)
+);
 
-module.exports = postSchema;
+module.exports = commentSchema;
