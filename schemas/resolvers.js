@@ -7,6 +7,12 @@ const resolvers = {
             const params = username ? { username } : {};
             return Post.find(params).sort({ createdAt: -1 });
         },
+        users: async () => {
+            return User.find()
+                .select('-__v -password')
+                .populate('friends')
+                .populate('posts');
+        },
     }
 }
 
