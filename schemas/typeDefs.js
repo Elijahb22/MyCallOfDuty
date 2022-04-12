@@ -7,9 +7,18 @@ const typeDefs = gql`
         createdAt: String
         username: String
         commentCount: Int
-}   
-    type Query {
+    }
+    type User {
+        _id: ID
+        username: String
+        email: String
+        friendCount: Int
         posts: [Post]
+        friends: [User]
+    }
+    type Query {
+        posts(username: String): [Post]
+        users: [User]
     }
 `;
 

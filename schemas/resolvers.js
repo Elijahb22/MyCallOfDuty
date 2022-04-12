@@ -1,12 +1,12 @@
 
 const { User, Post } = require('../models');
-const { post } = require('../models/User');
 
 const resolvers = {
     Query: {
-        posts: async () => {
-            return post.find().sort({ createdAt: -1 });
-          }
+        posts: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Post.find(params).sort({ createdAt: -1 });
+        },
     }
 }
 
