@@ -13,6 +13,12 @@ const resolvers = {
                 .populate('friends')
                 .populate('posts');
         },
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+            .select('-__v -password')
+            .populate('friends')
+            .populate('posts');
+        }
     }
 }
 
