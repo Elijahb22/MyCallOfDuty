@@ -17,9 +17,11 @@ const typeDefs = gql`
         friends: [User]
     }
     type Query {
+        post(_id: ID!): Post
         posts(username: String): [Post]
         users: [User]
         user(username: String!): User
+
     }
 `;
 
