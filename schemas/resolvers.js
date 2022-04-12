@@ -1,11 +1,8 @@
 
-const { User, Post } = require('../models')
+const { User } = require('../models')
 
 const resolvers = {
     Query: {
-        users: async () => {
-            return User.find()
-        }
     }
 }
 
