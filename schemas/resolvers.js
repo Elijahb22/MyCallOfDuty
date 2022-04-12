@@ -83,6 +83,19 @@ const resolvers = {
 
             const token = iToken(user)
             return { token, user };
+        },
+        addFriend: async (parent, { friendId }, context) => {
+            if (context.user) {
+              const updatedUser = await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: { friends: friendId } },
+                { new: true }
+              ).populate('friends');
+          
+              return updatedUser;
+            }
+          
+            throw new AuthenticationError('Must be logged in!');
         }
         
     }
