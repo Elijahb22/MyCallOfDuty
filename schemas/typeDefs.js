@@ -25,7 +25,8 @@ const typeDefs = gql`
     }
     type Mutation {
         addPost(postText: String!): Post
-        addComment(postId: ID!, commentBody: String!): Post
+        addComment(postId: ID!, commentBody: String!): Post\
+        addUser(username: String!, email: String!, password: String!): User
     }
 `;
 

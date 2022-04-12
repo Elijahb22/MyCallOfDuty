@@ -36,6 +36,11 @@ const resolvers = {
         },
     },
     Mutation: {
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
+          
+            return user;
+        },
         addPost: async (parent, args, context) => {
             if (context.user) {
               const post = await Post.create({ ...args, username: context.user.username });
@@ -60,7 +65,7 @@ const resolvers = {
               return updatedPost;
             }
     
-          },
+        },
         
     }
 }
