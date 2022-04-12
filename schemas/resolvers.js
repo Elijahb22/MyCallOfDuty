@@ -1,6 +1,7 @@
 
 const { User, Post } = require('../models');
 const { AuthenticationError } = require('apollo-server-express')
+const { iToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -38,8 +39,9 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
-          
-            return user;
+            const token = iToken(user);
+
+            return { token, user };
         },
         addPost: async (parent, args, context) => {
             if (context.user) {
@@ -78,8 +80,9 @@ const resolvers = {
             if (!correctPassword) {
               throw new AuthenticationError('Incorrect!');
             }
-          
-            return user;
+
+            const token = iToken(user)
+            return { token, user };
         }
         
     }
