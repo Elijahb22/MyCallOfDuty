@@ -22,7 +22,18 @@ const resolvers = {
             .select('-__v -password')
             .populate('friends')
             .populate('posts');
-        }
+        },
+        me: async (parent, args, context) => {
+            if (context.user) {
+              const userData = await User.findOne({ _id: context.user._id })
+                .select('-__v -password')
+                .populate('posts')
+                .populate('friends');
+      
+              return userData;
+            }
+      
+        },
     },
     Mutation: {
         addPost: async (parent, args, context) => {
