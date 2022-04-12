@@ -1,5 +1,6 @@
 
 const { User, Post } = require('../models');
+const { post } = require('../models/User');
 
 const resolvers = {
     Query: {
@@ -21,6 +22,21 @@ const resolvers = {
             .select('-__v -password')
             .populate('friends')
             .populate('posts');
+        }
+    },
+    Mutation: {
+        addPost: async (parent, args, context) => {
+            if (context.user) {
+              const post = await Post.create({ ...args, username: context.user.username });
+          
+              await User.findByIdAndUpdate(
+                { _id: context.user._id },
+                { $push: { posts: post._id } },
+                { new: true }
+              );
+          
+              return post;
+            }
         }
     }
 }

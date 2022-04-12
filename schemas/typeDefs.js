@@ -21,7 +21,9 @@ const typeDefs = gql`
         posts(username: String): [Post]
         users: [User]
         user(username: String!): User
-
+    }
+    type Mutation {
+        addPost(postText: String!): Post
     }
 `;
 
