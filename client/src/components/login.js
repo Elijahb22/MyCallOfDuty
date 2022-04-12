@@ -2,7 +2,7 @@ import React from 'react';
 
 const login = () => {
     return(
-        <main className='flex-row justify-center mb-4'>
+        <main className='flex-row justify-center'>
         <div className=''>
           <div className='card'>
             <h4 className='card-header'>Login</h4>
