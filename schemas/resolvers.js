@@ -48,7 +48,20 @@ const resolvers = {
           
               return post;
             }
-        }
+        },
+        addComment: async (parent, { postId, commentBody }, context) => {
+            if (context.user) {
+              const updatedPost = await Post.findOneAndUpdate(
+                { _id: postId },
+                { $push: { comments: { commentBody, username: context.user.username } } },
+                { new: true, runValidators: true }
+              );
+      
+              return updatedPost;
+            }
+    
+          },
+        
     }
 }
 
