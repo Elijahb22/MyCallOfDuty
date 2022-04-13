@@ -17,7 +17,7 @@ function App() {
       <Router>
         <div className="App">
           <header></header>
-          <Route exact path="./components/login/index.js"></Route>
+          <Route exact path="/login" component={Login}></Route>
         </div>
       </Router>
     </ApolloProvider>
