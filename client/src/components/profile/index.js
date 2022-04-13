@@ -17,7 +17,14 @@ return (
     <div>
         <div className="">
             <h2 className="">My  profile.</h2>
-            <Select placeholder="N/A" options={rank}></Select>
+                <div>
+                    <label>Bio:</label>
+                    <input placeholder=''></input>
+                </div>
+                <div>
+                    <label>Rank or Warzone: </label>
+                    <Select placeholder="N/A" options={rank}></Select>
+                </div>
             <button className="btn ">Add Friend</button>
         </div>
         <div className="flex-row justify-space-between">
