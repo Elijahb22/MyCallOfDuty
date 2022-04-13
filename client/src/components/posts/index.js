@@ -15,8 +15,8 @@ const Post = ({ posts, title }) => {
               <div className="card-body">
                 <p>{post.postText}</p>
                 <p className="">
-                  Comments: {post.postCount} || Click to{' '}
-                  {post.reactionCount ? 'view' : 'start'} comment!
+                  Comments: {post.commentCount} || Click to{' '}
+                  {post.commmentCount ? 'view' : 'start'} comment!
                 </p>
               </div>
             </div>
