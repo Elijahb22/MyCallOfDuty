@@ -8,7 +8,7 @@ export const Query_posts = gql`
       createdAt
       username
       commentCount
-      comment {
+      comments {
         _id
         createdAt
         username
