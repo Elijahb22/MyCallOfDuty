@@ -12,7 +12,7 @@ export const query_posts = gql`
         _id
         createdAt
         username
-        reactionBody
+        commentBody
       }
     }
   }
