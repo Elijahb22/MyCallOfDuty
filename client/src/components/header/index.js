@@ -5,7 +5,6 @@ const Header = () => {
         <header className="flex-row align-center">
             <div className="container flex-row justify-center align-center">
                 <h1>My Call of Duty </h1>
-  
                 <nav className="text-center">
                     <a>My profile</a>
                     <a href="/">
