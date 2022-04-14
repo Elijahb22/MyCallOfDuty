@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Post = ({ posts, title }) => {
     
@@ -9,8 +10,10 @@ const Post = ({ posts, title }) => {
           posts.map(post => (
             <div key={post._id} className="card">
               <p className="card-header">
-                {post.username}
-                Post on {post.createdAt}
+                <Link>
+                  {post.username}
+                </Link>
+                Post on {post.createdAt} 
               </p>
               <div className="card-body">
                 <p>{post.postText}</p>
