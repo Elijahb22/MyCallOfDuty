@@ -1,18 +1,22 @@
 import React from 'react'
 import Select from 'react-select';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import Friends from '../friends';
 import Posts from '../posts';
 import { useQuery } from '@apollo/client';
-import { Query_user } from '../utils/queries';
+import { Query_user, Query_me } from '../utils/queries';
+import Auth from '../utils/auth';
 
 const Profile = () => {
 const { username: userParam } = useParams();
-const { loading, data } = useQuery(Query_user, {
+const { loading, data } = useQuery(userParam ? Query_user : Query_me, {
     variables: { username: userParam }
-});  
-const user = data?.user || {};
-  
+});
+const user = data?.me || data?.user || {};
+if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Redirect to="/profile" />;
+}
+
 if (loading) {
     return <div>Loading...</div>;
 }
