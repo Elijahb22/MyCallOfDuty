@@ -1,19 +1,23 @@
 import React from 'react';
+import Comments from '../comments';
 
 const onePost = props => {
   return (
     <div>
       <div className="card">
         <p className="card-header">
-          <span className="text">
-            Username
+          <span className="">
+            {post.username}
           </span>{' '}
-          post createdAt
+          Post {thought.createdAt}
         </p>
         <div className="card-body">
-          <p>Post Text</p>
+          <p>{post.postText}</p>
         </div>
       </div>
+      {post.commentCount > 0 && (
+        <Comments comments={thought.comments}/>
+      )}
     </div>
   );
 };
