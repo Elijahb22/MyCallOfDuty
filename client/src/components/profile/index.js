@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select';
 import { useParams } from 'react-router-dom';
-
+import Friends from '../friends';
 import Posts from '../posts';
 import { useQuery } from '@apollo/client';
 import { Query_user } from '../utils/queries';
@@ -46,7 +46,7 @@ return (
             <div className="">
             <Posts  posts={user.posts} title={`${user.username}'s posts...`} />
             </div>
-            <div className="">friends</div>
+            <div className=""><Friends username={user.username} friendCount={user.friendCount} friends={user.friends}/></div>
         </div>
     </div>
   );
