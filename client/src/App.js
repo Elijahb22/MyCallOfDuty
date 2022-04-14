@@ -32,8 +32,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+      <Header/>
         <div className="">
-          <Header></Header>
           <Switch>
           <Route exact path="" components={Home}></Route>
           <Route exact path="/login" component={Login}></Route>
@@ -41,8 +41,8 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/post/:id" component={onePost} />
           </Switch>
-          <Footer></Footer>
         </div>
+      <Footer/>
       </Router>
     </ApolloProvider>
   );
