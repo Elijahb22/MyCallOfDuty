@@ -1,12 +1,12 @@
 import React from 'react';
 import Comments from '../comments';
 import { useQuery } from '@apollo/client';
-import { Query_posts  } from '../utils/queries';
+import { Query_post  } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 
 const OnePost = props => {
 const { id: postId } = useParams();
-const { loading, data } = useQuery(Query_posts, {
+const { loading, data } = useQuery(Query_post, {
   variables: { id: postId }
 });
 const post = data?.post || {};
