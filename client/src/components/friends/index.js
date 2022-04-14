@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Friends = () => {
   
     return (
@@ -7,7 +9,7 @@ const Friends = () => {
           friendCount
         </h5>
         <button>
-            Add Friend
+            <Link to={`/profile/${friend.username}`}>{friend.username}</Link>
         </button>
       </div>
     )
