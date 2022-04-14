@@ -11,9 +11,12 @@ const comments = (comments) => {
         <div className="card-body">
         {comments &&
             comments.map(comment => (
+                <p key={comment._id}>
+                {comment.commentBody} //{' '}
                 <Link to={`/profile/${comment.username}`} >
                     {comment.username} on {comment.createdAt}
                 </Link>
+                </p>
             ))
         }
         </div>
