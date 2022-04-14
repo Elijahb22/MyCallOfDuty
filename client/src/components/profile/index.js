@@ -54,7 +54,7 @@ return (
                     <label>Rank or Warzone: </label>
                     <Select placeholder="N/A" options={rank}></Select>
                 </div>
-            <button className="btn ">Add Friend</button>
+            <button className="btn " onClick={ handleClick }>Add Friend</button>
         </div>
         <div className="flex-row justify-space-between">
             <div className="">
