@@ -1,7 +1,22 @@
 import React from 'react'
 import Select from 'react-select';
+import { useParams } from 'react-router-dom';
+
+import Posts from '../posts';
+import { useQuery } from '@apollo/client';
+import { Query_user } from '../utils/queries';
 
 const Profile = () => {
+const { username: userParam } = useParams();
+const { loading, data } = useQuery(Query_user, {
+    variables: { username: userParam }
+});  
+const user = data?.user || {};
+  
+if (loading) {
+    return <div>Loading...</div>;
+}
+
 const rank = [
     { label: "Contender", value: 1 },
     { label: "Specialist", value: 2 },
@@ -16,7 +31,7 @@ const rank = [
 return (
     <div>
         <div className="">
-            <h2 className="">My  profile.</h2>
+            <h2 className="">{user.username}'s profile.</h2>
                 <div>
                     <label>Bio:</label>
                     <input placeholder=''></input>
@@ -29,7 +44,7 @@ return (
         </div>
         <div className="flex-row justify-space-between">
             <div className="">
-                Posts
+            <Posts  posts={user.posts} title={`${user.username}'s posts...`} />
             </div>
             <div className="">friends</div>
         </div>
