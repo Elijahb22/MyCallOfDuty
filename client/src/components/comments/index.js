@@ -9,9 +9,13 @@ const comments = (comments) => {
           <span className="">Comments</span>
         </div>
         <div className="card-body">
-            <Link to={`/profile/${comment.username}`} >
-                {comment.username} on {comment.createdAt}
-            </Link>
+        {comments &&
+            comments.map(comment => (
+                <Link to={`/profile/${comment.username}`} >
+                    {comment.username} on {comment.createdAt}
+                </Link>
+            ))
+        }
         </div>
       </div>
     );
