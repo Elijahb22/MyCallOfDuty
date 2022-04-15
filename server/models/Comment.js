@@ -4,7 +4,8 @@ const commentSchema = new Schema(
     {
         comment: {
             type: String,
-            maxlength: 200
+            maxlength: 200,
+            required: true
         },
         username: {
             type: String,
