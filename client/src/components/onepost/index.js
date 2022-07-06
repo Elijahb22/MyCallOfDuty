@@ -1,7 +1,7 @@
 import React from 'react';
 import Comments from '../comments';
 import { useQuery } from '@apollo/client';
-import { Query_post  } from '../utils/queries';
+import { Query_post  } from '../../utils/queries';
 import { useParams } from 'react-router-dom';
 
 const OnePost = props => {

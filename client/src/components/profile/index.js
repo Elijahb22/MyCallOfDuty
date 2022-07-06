@@ -4,9 +4,9 @@ import { Redirect, useParams } from 'react-router-dom';
 import Friends from '../friends';
 import Posts from '../posts';
 import { useQuery, useMutation } from '@apollo/client';
-import { Query_user, Query_me } from '../utils/queries';
-import Auth from '../utils/auth';
-import { Add_friend } from '../utils/mutations';
+import { Query_user, Query_me } from '../../utils/queries';
+import Auth from '../../utils/auth';
+import { Add_friend } from '../../utils/mutations';
 
 const Profile = () => {
 const [addFriend] = useMutation(Add_friend);

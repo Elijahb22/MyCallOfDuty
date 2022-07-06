@@ -2,8 +2,8 @@ import React from 'react';
 import Posts from '../posts';
 import Friends from '../friends';
 import { useQuery } from '@apollo/client';
-import { Query_posts, Query_mes } from '../utils/queries';
-import Auth from '../utils/auth';
+import { Query_posts, Query_mes } from '../../utils/queries';
+import Auth from '../../utils/auth';
 const Home = () => {
     const { loading, data } = useQuery(Query_posts);
     const posts = data?.posts || [];
