@@ -1,6 +1,6 @@
 import React from 'react';
-import Posts from '../posts';
-import Friends from '../friends';
+import Posts from '../../components/posts';
+import Friends from '../../components/friends';
 import { useQuery } from '@apollo/client';
 import { Query_posts, Query_mes } from '../../utils/queries';
 import Auth from '../../utils/auth';

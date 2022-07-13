@@ -1,8 +1,8 @@
 import React from 'react'
 import Select from 'react-select';
 import { Redirect, useParams } from 'react-router-dom';
-import Friends from '../friends';
-import Posts from '../posts';
+import Friends from '../../components/friends';
+import Posts from '../../components/posts';
 import { useQuery, useMutation } from '@apollo/client';
 import { Query_user, Query_me } from '../../utils/queries';
 import Auth from '../../utils/auth';
