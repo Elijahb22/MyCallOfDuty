@@ -5,12 +5,12 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/header';
-import Login from './components/login';
-import Profile from './components/profile';
-import Home from './components/home';
+import Login from './pages/login';
+import Profile from './pages/profile';
+import Home from './pages/home';
 import Footer from './components/footer';
-import Signup from './components/signUp';
-import Apost from './components/onepost';
+import Signup from './pages/signUp';
+import Apost from './pages/onepost';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -37,8 +37,8 @@ function App() {
           <Switch>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/profile/:username?" element={<Profile />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/profile/:username?" element={<Profile />} />
           <Route exact path="/post/:id" element={<Apost />} />
           </Switch>
         </div>
