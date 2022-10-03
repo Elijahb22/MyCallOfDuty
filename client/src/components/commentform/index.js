@@ -47,7 +47,7 @@ const CommentForm = ({ postId }) => {
       >
         <textarea
           placeholder="Leave a reaction to this thought..."
-          value={reactionBody}
+          value={commentBody}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>

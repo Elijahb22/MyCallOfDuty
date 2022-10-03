@@ -35,11 +35,11 @@ function App() {
       <Header/>
         <div className="">
           <Switch>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/profile/:username?" element={<Profile />} />
-          <Route exact path="/post/:id" element={<Apost />} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup}/>
+          <Route exact path="/profile/:username?" component={Profile} />
+          <Route exact path="/post/:id" component={Apost} />
           </Switch>
         </div>
       <Footer/>
