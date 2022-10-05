@@ -62,15 +62,15 @@ export const Query_me = gql`
       username
       email
       friendCount
-      thoughts {
+      posts {
         _id
-        thoughtText
+        postText
         createdAt
-        reactionCount
-        reactions {
+        commentCount
+        comments {
           _id
           createdAt
-          reactionBody
+          commentBody
           username
         }
       }
