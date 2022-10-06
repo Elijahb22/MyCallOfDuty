@@ -1,5 +1,7 @@
 import React from 'react';
 import Comments from '../../components/comments';
+import CommentForm from '../../components/commentform'
+import Auth from '../../utils/auth'
 import { useQuery } from '@apollo/client';
 import { Query_post  } from '../../utils/queries';
 import { useParams } from 'react-router-dom';
@@ -30,6 +32,7 @@ if (loading) {
       {post.commentCount > 0 && (
         <Comments comments={post.comments}/>
       )}
+      {Auth.loggedIn() && <CommentForm postId={post._id} />}
     </div>
   );
 };
